@@ -1,0 +1,14 @@
+[Unit]
+Description=Bose to HDMI cec Service
+After=multi-user.target
+StartLimitInterval=50
+StartLimitBurst=5
+
+[Service]
+Type=simple
+ExecStart=/opt/cectobose/ceccom.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
